@@ -161,3 +161,14 @@ def most_points_scored
       end}}
   player[:name]
 end
+
+def winning_team
+  score = {:home => 0, :away => 0}
+  game_hash.keys.each{|key|
+    game_hash[key][:players].each{|item|
+      score[key] += item.values[0][:points]}}
+  if score[:home] > score[:away]
+    return game_hash[:home][:team_name]
+  else
+    return game_hash[:away][:team_name]
+end
