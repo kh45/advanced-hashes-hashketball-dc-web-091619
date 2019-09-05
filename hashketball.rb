@@ -170,3 +170,15 @@ def winning_team
   return game_hash[:home][:team_name] if score[:home] > score[:away]
   game_hash[:away][:team_name]
 end
+
+def player_with_longest_name
+  score = {:letters => 0, :player => "hello"}
+  game_hash.keys.each{|key|
+    game_hash[key][:players].each{|item|
+      if item.keys[0].length > score[:letters]
+        puts item.keys[0]
+        score[:letters] = item.keys[0].length
+        score[:player] = item.keys[0]
+      end}}
+  score[:player]
+end
