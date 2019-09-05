@@ -140,7 +140,7 @@ def player_stats(player)
 end
 
 def big_shoe_rebounds
-  boards = {:rebounds => 0 , :shoe => 0}
+  boards = {:shoe => 0}
   game_hash.keys.each{|key|
     game_hash[key][:players].each{|item|
     if item.values[0][:shoe] > boards[:shoe]
