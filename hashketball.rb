@@ -181,3 +181,16 @@ def player_with_longest_name
       end}}
   score[:player]
 end
+
+def long_name_steals_a_ton?
+  player = player_with_longest_name
+  player_steals = 0
+  all_steals = []
+  game_hash.keys.each{|key|
+    game_hash[key][:players].each{|item|    
+    all_steals << item.values[0][:steals]
+    if item.keys.include?(player)
+      player_steals = item.values[0][:steals]
+    end}}
+  player_steals == all_steals.max
+end
