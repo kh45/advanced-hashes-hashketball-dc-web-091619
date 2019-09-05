@@ -176,7 +176,6 @@ def player_with_longest_name
   game_hash.keys.each{|key|
     game_hash[key][:players].each{|item|
       if item.keys[0].length > score[:letters]
-        puts item.keys[0]
         score[:letters] = item.keys[0].length
         score[:player] = item.keys[0]
       end}}
