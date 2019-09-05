@@ -167,7 +167,6 @@ def winning_team
   game_hash.keys.each{|key|
     game_hash[key][:players].each{|item|
       score[key] += item.values[0][:points]}}
-  puts score
   return game_hash[:home][:team_name] if score[:home] > score[:away]
   game_hash[:away][:team_name]
 end
