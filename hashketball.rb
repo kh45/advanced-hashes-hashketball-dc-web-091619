@@ -154,8 +154,7 @@ end
 def most_points_scored
   player = {:points => 0}
   game_hash.keys.each{|key|
-    game_hash[key][:players]{|item|
-    puts item
+    game_hash[key][:players].each{|item|
       if item.values[0][:points] > player[:points]
         player[:points] = item.values[0][:points]
         player[:name] = item.keys[0]
